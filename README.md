@@ -1,0 +1,1 @@
+try.html --using query ui folder + bootstrap js/css, shown to jaro, but no two scrollbars and bottom unfix.
