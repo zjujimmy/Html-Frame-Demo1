@@ -1,0 +1,236 @@
+<HTML>
+<HEAD>
+<TITLE>Prototype</TITLE>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+
+<link type="text/css" rel="stylesheet" href="css/layout-default-latest.css" />
+<style type="text/css">
+	body {
+        	
+      	}
+  .sidebar-nav {
+        	padding: 0px 0;
+		      margin: 0 0 0 0;
+  }
+
+	@media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+	}
+
+
+	html{
+		
+		width:		100%;  /*was 100% 1673px*/
+		height:		100%;					
+		padding:	0;
+		margin:		0;
+		/*overflow:	auto; *//* when page gets too small for container min-width/height */
+	}
+	#container {
+		
+		min-height:	100%;   /*880px*/
+		min-width:	100%;
+		position:	relative;
+		top:		0px;	/* margins in pixels */
+		bottom:		0px;	/* could also use a percent */
+		left:		0px;
+		right:		0px;
+		padding: 0;
+	}
+	.pane {
+		display:	none; /* will appear when layout inits */
+	}
+
+	.ui-layout-center {
+		padding-top: 50px;
+	}
+	
+	.ui-layout-west {
+		padding-top: 50px;
+	}
+	
+	hr{
+		border-width: 2px 0; 
+		margin: 0;
+	}
+
+	#foot{
+		padding: 3px 3px;
+	}
+
+
+	.inner-center ,
+		.inner-west ,
+		.inner-east {
+			padding-right:		6px; /* SAMPLE formatting */
+		}
+
+	
+		.inner-center ,
+		.inner-west ,
+		.inner-east {
+			/* prevent 'Flash Of Content' - panes will show automatically when layout initializes */
+			display:		none;
+	}
+
+	.inner-layout-container	{
+		 height: 100%;
+	}
+	.inner-layout-container .ui-layout-pane {
+			overflow:		hidden; /* prevent temporary 'flash' of scrollbar - using a scrolling div instead */
+		}
+	.ui-layout-content {
+			padding:		10px;
+			overflow:		auto; /* REQUIRED if you want it to 'scroll' */
+		}
+	.pane-header {
+			padding:		3px 10px;
+			margin-bottom:	10px; /* space between header and content-div below */
+		}
+	.ui-layout-center		{ padding:		30px; }
+
+		/* add some colors to distinguish outer from inner panes */
+	.ui-layout-center 		{ background:	#FFE; }
+
+	#order .ui-layout-pane	{ background:	#EFE; }
+
+	
+	</style>
+
+
+<SCRIPT type="text/javascript" src="jquery.js"></SCRIPT>
+<script type="text/javascript" src="jquery.ui.all.js"></script>
+<SCRIPT type="text/javascript" src="jquery.layout.js"></SCRIPT>
+
+
+<SCRIPT type="text/javascript">
+
+var innerLayoutOptions = {
+		center__paneSelector:   ".inner-center" 
+	,	west__paneSelector:		".inner-west" 
+	,	east__paneSelector:		".inner-east" 
+	,	west__size:				280 
+	,	east__size:				.33 
+	,	spacing_open:			8  // ALL panes 
+	,	spacing_closed:			12  // ALL panes 
+	,	west__spacing_closed:   12 
+	,	east__spacing_closed:   12 
+	,	resizeWhileDragging:	true
+	};
+
+var myLayout;
+$(document).ready(function () {
+	/*myLayout = $('#order').layout({
+	north__slidable:			false,
+	north__spacing_closed:		0,
+	north__spacing_open:		0,
+	south__slidable:			false,
+	south__spacing_closed:		0,
+	south__spacing_open:		0,
+	east__slidable:				false,
+	east__spacing_closed:		0,
+	east__spacing_open:		0
+
+	
+});
+	myLayout.hide('east');
+	myLayout.hide('north');
+	myLayout.hide('south');
+*/
+	myLayout = $('#order').layout(innerLayoutOptions);
+	
+	
+});
+</SCRIPT>
+</HEAD>
+<BODY>
+<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Project name</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              Welcome <a href="#" class="navbar-link">Jingbin Liu</a>
+            </p>
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+</div>
+<div id="container" class="ui-layout-center ui-widget">
+   <DIV id="order" class="inner-layout-container"> 
+
+		<DIV class="inner-center"> 
+			<DIV class="pane-header ui-state-default ui-corner-all">CENTER</DIV> 
+			<DIV id="grid-example" class="ui-layout-content ui-widget-content">
+				<P>grid-example
+</P>
+<P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut purus sapien? Vestibulum sit amet turpis purus, sed tincidunt nunc. Suspendisse nunc eros, faucibus a tincidunt et, malesuada eu mauris. Sed ultricies aliquet dolor eu rhoncus. Nunc ac enim in est interdum vestibulum. Sed ut vulputate odio. Sed tristique tellus eget metus pulvinar nec suscipit odio tincidunt! Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut luctus vestibulum turpis eget iaculis. Nam eget gravida erat?
+</P>
+<P>Aliquam tristique erat vulputate nisl pretium aliquam. Morbi ac interdum mi. Nullam euismod justo varius tellus vulputate mattis. Etiam libero risus, ultrices nec interdum non; malesuada sed leo? Praesent volutpat, turpis vitae sodales congue, arcu dolor eleifend diam, a cursus nulla massa ut sapien. Pellentesque sed lacus augue, eu commodo orci. Proin in sapien purus; vel placerat mauris! Integer dapibus, odio id semper mattis, mi nunc congue tortor, sed pulvinar lacus lacus auctor enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean urna odio, blandit et consequat at, bibendum pretium tellus! Nullam tincidunt erat id nunc semper congue! Duis a sapien tortor. Curabitur lobortis faucibus velit, a aliquet massa mollis at.
+</P>
+<P>Pellentesque mollis, augue a pulvinar euismod, lacus augue venenatis magna, id tristique odio odio quis dolor. Integer accumsan arcu in nulla ultrices sit amet tristique dui tincidunt. Aliquam erat volutpat. Sed mollis sapien erat, non sagittis nibh. Cras eu nisl dolor? Aenean dapibus leo sit amet dolor accumsan ac tempor leo pretium. Curabitur ullamcorper luctus adipiscing. Fusce scelerisque dui sodales nisl pretium nec euismod augue malesuada. Suspendisse nisi magna, consectetur egestas molestie sit amet, convallis ut ipsum. Aliquam non turpis augue.
+</P>
+<P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec ligula ut dui laoreet aliquam. Nulla facilisi. Sed varius ultrices nisl, vel semper risus posuere in! Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras cursus dignissim lorem, eu imperdiet justo ornare sed. Suspendisse gravida risus sit amet ante aliquet eu tincidunt turpis iaculis. Donec commodo velit vitae urna lobortis ac venenatis risus pharetra. Fusce dapibus feugiat purus eu tincidunt. Nullam dignissim, metus convallis faucibus commodo, libero nisi semper tellus, ac venenatis ligula tellus mollis magna.
+</P>
+<P>Aliquam tristique erat vulputate nisl pretium aliquam. Morbi ac interdum mi. Nullam euismod justo varius tellus vulputate mattis. Etiam libero risus, ultrices nec interdum non; malesuada sed leo? Praesent volutpat, turpis vitae sodales congue, arcu dolor eleifend diam, a cursus nulla massa ut sapien. Pellentesque sed lacus augue, eu commodo orci. Proin in sapien purus; vel placerat mauris! Integer dapibus, odio id semper mattis, mi nunc congue tortor, sed pulvinar lacus lacus auctor enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean urna odio, blandit et consequat at, bibendum pretium tellus! Nullam tincidunt erat id nunc semper congue! Duis a sapien tortor. Curabitur lobortis faucibus velit, a aliquet massa mollis at.
+</P>
+<P>Pellentesque mollis, augue a pulvinar euismod, lacus augue venenatis magna, id tristique odio odio quis dolor. Integer accumsan arcu in nulla ultrices sit amet tristique dui tincidunt. Aliquam erat volutpat. Sed mollis sapien erat, non sagittis nibh. Cras eu nisl dolor? Aenean dapibus leo sit amet dolor accumsan ac tempor leo pretium. Curabitur ullamcorper luctus adipiscing. Fusce scelerisque dui sodales nisl pretium nec euismod augue malesuada. Suspendisse nisi magna, consectetur egestas molestie sit amet, convallis ut ipsum. Aliquam non turpis augue.
+</P>
+<P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec ligula ut dui laoreet aliquam. Nulla facilisi. Sed varius ultrices nisl, vel semper risus posuere in! Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras cursus dignissim lorem, eu imperdiet justo ornare sed. Suspendisse gravida risus sit amet ante aliquet eu tincidunt turpis iaculis. Donec commodo velit vitae urna lobortis ac venenatis risus pharetra. Fusce dapibus feugiat purus eu tincidunt. Nullam dignissim, metus convallis faucibus commodo, libero nisi semper tellus, ac venenatis ligula tellus mollis magna.
+</P><P>Aliquam tristique erat vulputate nisl pretium aliquam. Morbi ac interdum mi. Nullam euismod justo varius tellus vulputate mattis. Etiam libero risus, ultrices nec interdum non; malesuada sed leo? Praesent volutpat, turpis vitae sodales congue, arcu dolor eleifend diam, a cursus nulla massa ut sapien. Pellentesque sed lacus augue, eu commodo orci. Proin in sapien purus; vel placerat mauris! Integer dapibus, odio id semper mattis, mi nunc congue tortor, sed pulvinar lacus lacus auctor enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean urna odio, blandit et consequat at, bibendum pretium tellus! Nullam tincidunt erat id nunc semper congue! Duis a sapien tortor. Curabitur lobortis faucibus velit, a aliquet massa mollis at.
+</P>
+<P>Pellentesque mollis, augue a pulvinar euismod, lacus augue venenatis magna, id tristique odio odio quis dolor. Integer accumsan arcu in nulla ultrices sit amet tristique dui tincidunt. Aliquam erat volutpat. Sed mollis sapien erat, non sagittis nibh. Cras eu nisl dolor? Aenean dapibus leo sit amet dolor accumsan ac tempor leo pretium. Curabitur ullamcorper luctus adipiscing. Fusce scelerisque dui sodales nisl pretium nec euismod augue malesuada. Suspendisse nisi magna, consectetur egestas molestie sit amet, convallis ut ipsum. Aliquam non turpis augue.
+</P>
+<P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec ligula ut dui laoreet aliquam. Nulla facilisi. Sed varius ultrices nisl, vel semper risus posuere in! Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras cursus dignissim lorem, eu imperdiet justo ornare sed. Suspendisse gravida risus sit amet ante aliquet eu tincidunt turpis iaculis. Donec commodo velit vitae urna lobortis ac venenatis risus pharetra. Fusce dapibus feugiat purus eu tincidunt. Nullam dignissim, metus convallis faucibus commodo, libero nisi semper tellus, ac venenatis ligula tellus mollis magna.
+</P>
+
+			</DIV> 
+		</DIV> 
+
+		<DIV class="inner-west"> 
+			<DIV class="pane-header ui-state-default ui-corner-all">west</DIV> 
+			<DIV class="ui-layout-content ui-widget-content">
+				<P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut purus sapien? Vestibulum sit amet turpis purus, sed tincidunt nunc. Suspendisse nunc eros, faucibus a tincidunt et, malesuada eu mauris. Sed ultricies aliquet dolor eu rhoncus. Nunc ac enim in est interdum vestibulum. Sed ut vulputate odio. Sed tristique tellus eget metus pulvinar nec suscipit odio tincidunt! Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut luctus vestibulum turpis eget iaculis. Nam eget gravida erat?
+</P>
+<P>Aliquam tristique erat vulputate nisl pretium aliquam. Morbi ac interdum mi. Nullam euismod justo varius tellus vulputate mattis. Etiam libero risus, ultrices nec interdum non; malesuada sed leo? Praesent volutpat, turpis vitae sodales congue, arcu dolor eleifend diam, a cursus nulla massa ut sapien. Pellentesque sed lacus augue, eu commodo orci. Proin in sapien purus; vel placerat mauris! Integer dapibus, odio id semper mattis, mi nunc congue tortor, sed pulvinar lacus lacus auctor enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean urna odio, blandit et consequat at, bibendum pretium tellus! Nullam tincidunt erat id nunc semper congue! Duis a sapien tortor. Curabitur lobortis faucibus velit, a aliquet massa mollis at.
+</P>
+<P>Pellentesque mollis, augue a pulvinar euismod, lacus augue venenatis magna, id tristique odio odio quis dolor. Integer accumsan arcu in nulla ultrices sit amet tristique dui tincidunt. Aliquam erat volutpat. Sed mollis sapien erat, non sagittis nibh. Cras eu nisl dolor? Aenean dapibus leo sit amet dolor accumsan ac tempor leo pretium. Curabitur ullamcorper luctus adipiscing. Fusce scelerisque dui sodales nisl pretium nec euismod augue malesuada. Suspendisse nisi magna, consectetur egestas molestie sit amet, convallis ut ipsum. Aliquam non turpis augue.
+</P>
+<P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec ligula ut dui laoreet aliquam. Nulla facilisi. Sed varius ultrices nisl, vel semper risus posuere in! Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras cursus dignissim lorem, eu imperdiet justo ornare sed. Suspendisse gravida risus sit amet ante aliquet eu tincidunt turpis iaculis. Donec commodo velit vitae urna lobortis ac venenatis risus pharetra. Fusce dapibus feugiat purus eu tincidunt. Nullam dignissim, metus convallis faucibus commodo, libero nisi semper tellus, ac venenatis ligula tellus mollis magna.
+</P>			</DIV> 
+		</DIV> 
+
+    </DIV> 
+
+</div>  <!--container-->
+
+<hr>
+<div id="foot">
+   <p>&copy; 2013 Cisco System Inc. All rights reserved. </p>
+</div>
+
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</BODY>
+</HTML>
