@@ -5,17 +5,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- Le styles -->
+    <!-- For bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 
-
+<!-- For Jquery ui layout -->
 <link type="text/css" rel="stylesheet" href="css/layout-default-latest.css" />
 
 
-<!-- For Z-tree -->
+<!-- For JQtree -->
 
-<link rel="stylesheet" href="jqtree.css">
+<link rel="stylesheet" href="css/jqtree.css">
 	
 
 
@@ -130,12 +130,20 @@
 	</style>
 
 
-<SCRIPT type="text/javascript" src="jquery.js"></SCRIPT>
-<script type="text/javascript" src="jquery.ui.all.js"></script>
-<SCRIPT type="text/javascript" src="jquery.layout.js"></SCRIPT>
-<script type="text/javascript" src="js/tree.jquery.js"></script>
-<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 
+
+<!--
+ <SCRIPT type="text/javascript" src="js/jquery.js"></SCRIPT>
+<script type="text/javascript" src="js/jquery.ui.all.js"></script>
+<SCRIPT type="text/javascript" src="js/jquery.layout.js"></SCRIPT>
+-->
+<!-- For jquery ui layout -->
+<SCRIPT type="text/javascript" src="js/jquery-latest.js"></SCRIPT>
+<script type="text/javascript" src="js/jquery-ui-latest.js"></script>
+<SCRIPT type="text/javascript" src="js/jquery.layout-latest.js"></SCRIPT>
+
+<!-- For jqtree -->
+<script type="text/javascript" src="js/tree.jquery.js"></script>
 <SCRIPT type="text/javascript">
 
 var innerLayoutOptions = {
@@ -152,21 +160,7 @@ var innerLayoutOptions = {
 };
 
 
-var data = [
-    {
-        label: 'node1',
-        children: [
-            { label: 'child1' },
-            { label: 'child2' }
-        ]
-    },
-    {
-        label: 'node2',
-        children: [
-            { label: 'child3' }
-        ]
-    }
-];
+
 		
 
 var myLayout;
@@ -188,14 +182,53 @@ $(document).ready(function () {
 	myLayout.hide('north');
 	myLayout.hide('south');
 */
+	/*For jquery ui layout*/
 	myLayout = $('#order').layout(innerLayoutOptions);
 
+    /* For jqtree */
+	var data = [
+    {
+        label: 'INSTANCES',
+        children: [
+            { label: 'Instances' },
+            { label: 'Reserved Instances' }
+        ]
+    },
+    {
+        label: 'IMAGES',
+        children: [
+            { label: 'AMIs' },
+            { label: 'Bundle Tasks'}
+        ]
+    },
+    {
+    	label: 'ELASTIC BLOCK STORE',
+    	children: [
+    		{ label: 'Volumes'},
+    		{ label: 'Snapshots'}
+    	]
+    },
+    {
+    	label: 'NETWORK & SECURITY',
+    	children: [
+    		{ label: 'Security Groups'},
+    		{ label: 'Elastic IPs'},
+    		{ label: 'Placement Groups'},
+    		{ label: 'Load Balancers'},
+    		{ label: 'Network Interfaces'}
+    	]
+    }
 
-	$(function() {
-    	$('#tree1').tree({
-        	data: data
-    	});
-	});
+	];
+
+	$('#tree1').tree({
+        	data: data,
+        	openedIcon: '-',
+        	closedIcon: '+',
+        	slide: false,
+        	autoOpen: true
+
+    });
 	
 	
 });
@@ -203,6 +236,7 @@ $(document).ready(function () {
 
 
 </SCRIPT>
+
 </HEAD>
 <BODY>
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -259,10 +293,10 @@ $(document).ready(function () {
 		</DIV> 
 
 		<DIV class="inner-west"> 
-
-				<div id="tree1">
-
-			</div>
+				<div class="pane-header ui-state-default ui-corner-all">Sidebar </div>
+				<div class="ui-layout-content ui-widget-content">
+					<div id="tree1"></div>
+				</div>
 
 		</DIV> 
 
@@ -278,5 +312,8 @@ $(document).ready(function () {
 
 
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
+
 </BODY>
 </HTML>
