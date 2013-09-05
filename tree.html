@@ -123,7 +123,7 @@
 
 
 
-
+	
 
 
 
@@ -144,6 +144,11 @@
 
 <!-- For jqtree -->
 <script type="text/javascript" src="js/tree.jquery.js"></script>
+
+<!-- For d3 -->
+
+
+
 <SCRIPT type="text/javascript">
 
 var innerLayoutOptions = {
@@ -229,9 +234,28 @@ $(document).ready(function () {
         	autoOpen: true
 
     });
+
+   $('#tree1').bind(
+    	'tree.click',
+    	function(event) {
+    		var node = event.node;
+    		var strNodeName = "content/sample-";
+    		//strNodeName += node.name;
+    		
+    		if (node.name == "Instances") {
+    			strNodeName += "d3";
+    		} else{
+    			strNodeName += "Volumes";
+    		}
+    		strNodeName += ".html?t=" + Math.random();
+    		$('#grid-example').load(strNodeName);
+    		
+    	}
+    );
 	
-	
+	$('#grid-example').load("content/sample-content.html");
 });
+
 
 
 
@@ -265,31 +289,9 @@ $(document).ready(function () {
    <DIV id="order" class="inner-layout-container"> 
 
 		<DIV class="inner-center"> 
-			<DIV class="pane-header ui-state-default ui-corner-all">CENTER</DIV> 
+			 <DIV class="pane-header ui-state-default ui-corner-all">CENTER</DIV> 
 			<DIV id="grid-example" class="ui-layout-content ui-widget-content">
-				<P>grid-example
-</P>
-<P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut purus sapien? Vestibulum sit amet turpis purus, sed tincidunt nunc. Suspendisse nunc eros, faucibus a tincidunt et, malesuada eu mauris. Sed ultricies aliquet dolor eu rhoncus. Nunc ac enim in est interdum vestibulum. Sed ut vulputate odio. Sed tristique tellus eget metus pulvinar nec suscipit odio tincidunt! Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut luctus vestibulum turpis eget iaculis. Nam eget gravida erat?
-</P>
-<P>Aliquam tristique erat vulputate nisl pretium aliquam. Morbi ac interdum mi. Nullam euismod justo varius tellus vulputate mattis. Etiam libero risus, ultrices nec interdum non; malesuada sed leo? Praesent volutpat, turpis vitae sodales congue, arcu dolor eleifend diam, a cursus nulla massa ut sapien. Pellentesque sed lacus augue, eu commodo orci. Proin in sapien purus; vel placerat mauris! Integer dapibus, odio id semper mattis, mi nunc congue tortor, sed pulvinar lacus lacus auctor enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean urna odio, blandit et consequat at, bibendum pretium tellus! Nullam tincidunt erat id nunc semper congue! Duis a sapien tortor. Curabitur lobortis faucibus velit, a aliquet massa mollis at.
-</P>
-<P>Pellentesque mollis, augue a pulvinar euismod, lacus augue venenatis magna, id tristique odio odio quis dolor. Integer accumsan arcu in nulla ultrices sit amet tristique dui tincidunt. Aliquam erat volutpat. Sed mollis sapien erat, non sagittis nibh. Cras eu nisl dolor? Aenean dapibus leo sit amet dolor accumsan ac tempor leo pretium. Curabitur ullamcorper luctus adipiscing. Fusce scelerisque dui sodales nisl pretium nec euismod augue malesuada. Suspendisse nisi magna, consectetur egestas molestie sit amet, convallis ut ipsum. Aliquam non turpis augue.
-</P>
-<P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec ligula ut dui laoreet aliquam. Nulla facilisi. Sed varius ultrices nisl, vel semper risus posuere in! Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras cursus dignissim lorem, eu imperdiet justo ornare sed. Suspendisse gravida risus sit amet ante aliquet eu tincidunt turpis iaculis. Donec commodo velit vitae urna lobortis ac venenatis risus pharetra. Fusce dapibus feugiat purus eu tincidunt. Nullam dignissim, metus convallis faucibus commodo, libero nisi semper tellus, ac venenatis ligula tellus mollis magna.
-</P>
-<P>Aliquam tristique erat vulputate nisl pretium aliquam. Morbi ac interdum mi. Nullam euismod justo varius tellus vulputate mattis. Etiam libero risus, ultrices nec interdum non; malesuada sed leo? Praesent volutpat, turpis vitae sodales congue, arcu dolor eleifend diam, a cursus nulla massa ut sapien. Pellentesque sed lacus augue, eu commodo orci. Proin in sapien purus; vel placerat mauris! Integer dapibus, odio id semper mattis, mi nunc congue tortor, sed pulvinar lacus lacus auctor enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean urna odio, blandit et consequat at, bibendum pretium tellus! Nullam tincidunt erat id nunc semper congue! Duis a sapien tortor. Curabitur lobortis faucibus velit, a aliquet massa mollis at.
-</P>
-<P>Pellentesque mollis, augue a pulvinar euismod, lacus augue venenatis magna, id tristique odio odio quis dolor. Integer accumsan arcu in nulla ultrices sit amet tristique dui tincidunt. Aliquam erat volutpat. Sed mollis sapien erat, non sagittis nibh. Cras eu nisl dolor? Aenean dapibus leo sit amet dolor accumsan ac tempor leo pretium. Curabitur ullamcorper luctus adipiscing. Fusce scelerisque dui sodales nisl pretium nec euismod augue malesuada. Suspendisse nisi magna, consectetur egestas molestie sit amet, convallis ut ipsum. Aliquam non turpis augue.
-</P>
-<P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec ligula ut dui laoreet aliquam. Nulla facilisi. Sed varius ultrices nisl, vel semper risus posuere in! Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras cursus dignissim lorem, eu imperdiet justo ornare sed. Suspendisse gravida risus sit amet ante aliquet eu tincidunt turpis iaculis. Donec commodo velit vitae urna lobortis ac venenatis risus pharetra. Fusce dapibus feugiat purus eu tincidunt. Nullam dignissim, metus convallis faucibus commodo, libero nisi semper tellus, ac venenatis ligula tellus mollis magna.
-</P><P>Aliquam tristique erat vulputate nisl pretium aliquam. Morbi ac interdum mi. Nullam euismod justo varius tellus vulputate mattis. Etiam libero risus, ultrices nec interdum non; malesuada sed leo? Praesent volutpat, turpis vitae sodales congue, arcu dolor eleifend diam, a cursus nulla massa ut sapien. Pellentesque sed lacus augue, eu commodo orci. Proin in sapien purus; vel placerat mauris! Integer dapibus, odio id semper mattis, mi nunc congue tortor, sed pulvinar lacus lacus auctor enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean urna odio, blandit et consequat at, bibendum pretium tellus! Nullam tincidunt erat id nunc semper congue! Duis a sapien tortor. Curabitur lobortis faucibus velit, a aliquet massa mollis at.
-</P>
-<P>Pellentesque mollis, augue a pulvinar euismod, lacus augue venenatis magna, id tristique odio odio quis dolor. Integer accumsan arcu in nulla ultrices sit amet tristique dui tincidunt. Aliquam erat volutpat. Sed mollis sapien erat, non sagittis nibh. Cras eu nisl dolor? Aenean dapibus leo sit amet dolor accumsan ac tempor leo pretium. Curabitur ullamcorper luctus adipiscing. Fusce scelerisque dui sodales nisl pretium nec euismod augue malesuada. Suspendisse nisi magna, consectetur egestas molestie sit amet, convallis ut ipsum. Aliquam non turpis augue.
-</P>
-<P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec ligula ut dui laoreet aliquam. Nulla facilisi. Sed varius ultrices nisl, vel semper risus posuere in! Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras cursus dignissim lorem, eu imperdiet justo ornare sed. Suspendisse gravida risus sit amet ante aliquet eu tincidunt turpis iaculis. Donec commodo velit vitae urna lobortis ac venenatis risus pharetra. Fusce dapibus feugiat purus eu tincidunt. Nullam dignissim, metus convallis faucibus commodo, libero nisi semper tellus, ac venenatis ligula tellus mollis magna.
-</P>
-
-			</DIV> 
+			</DIV>
 		</DIV> 
 
 		<DIV class="inner-west"> 
