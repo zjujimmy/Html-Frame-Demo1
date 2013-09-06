@@ -1,0 +1,106 @@
+/*dashboard css for index.html */
+
+	body {
+		overflow: hidden;
+		padding: 40px 0;
+	}
+    .sidebar-nav {
+       	padding: 0px 0;
+		margin: 0 0 0 0;
+    }
+
+	@media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+	}
+
+	html{
+		width:		100%;  /*was 100% 1673px*/
+		height:		100%;					
+		padding:	0;
+		margin:		0;
+		/*overflow:	auto; *//* when page gets too small for container min-width/height */
+	}
+
+	#container {
+		min-height:	100%;   /* 100% 880px*/
+		min-width:	100%;
+		position:	relative;
+		top:		0px;	/* margins in pixels */
+		bottom:		0px;	/* could also use a percent */
+		left:		0px;
+		right:		0px;
+		padding: 0;
+	}
+
+	.pane {
+		display:	none; /* will appear when layout inits */
+	}
+
+	.ui-layout-center {
+		padding-top: 50px;
+	}
+	
+	.ui-layout-west {
+		padding-top: 50px;
+	}
+	
+	hr{
+		border-width: 2px 0; 
+		margin: 0;
+	}
+
+	#foot{
+		padding: 3px 3px;
+
+	}
+
+	.inner-center ,
+	.inner-west ,
+	.inner-east {
+		padding-right: 6px; /* SAMPLE formatting */
+	}
+
+	.inner-center ,
+	.inner-west ,
+	.inner-east {
+		/* prevent 'Flash Of Content' - panes will show automatically when layout initializes */
+		display: none;
+	}
+
+	.inner-layout-container	{
+		height: 100%
+	}
+
+	.inner-layout-container .ui-layout-pane {
+		overflow:	hidden; /* prevent temporary 'flash' of scrollbar - using a scrolling div instead */
+	}
+
+	.ui-layout-content {
+		padding:		10px;
+		overflow:		auto; /* REQUIRED if you want it to 'scroll' */
+	}
+
+	.pane-header {
+		padding:		3px 10px;
+		margin-bottom:	10px; /* space between header and content-div below */
+	}
+
+	.ui-layout-center {
+		padding: 30px;
+	}
+
+	/* add some colors to distinguish outer from inner panes */
+	.ui-layout-center {
+		background:	#FFE;
+	}
+
+	#order .ui-layout-pane	{
+		background:	#EFE;
+	}
+
+

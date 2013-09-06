@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <title>Dashboard Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- css -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+    <!-- For jquery ui layout plugin -->
+    <link type="text/css" rel="stylesheet" href="css/layout-default-latest.css" />
+    <link type="text/css" rel="stylesheet" href="css/jqtree.css" />
+    <link type="text/css" rel="stylesheet" href="css/dashboard.css" />
+    
+    <!-- js files -->
+    <!-- For jquery ui layout plugin -->
+    <script type="text/javascript" src="js/jquery-latest.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-latest.js"></script>
+    <script type="text/javascript" src="js/jquery.layout-latest.js"></script>
+    <!-- For jqtree -->
+    <script type="text/javascript" src="js/tree.jquery.js"></script>
+    <script type="text/javascript" src="js/dashboard.js"></script> 
+  </head>
+  <body>
+
+    <!--begin navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+	      <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Dashboard Demo</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              Welcome <a href="#" class="navbar-link">User</a>
+            </p>
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+	      </div><!-- /.container-fluid -->
+      </div>
+    </div>
+    <!-- /.navbar -->
+
+    <!-- begin container -->
+    <div id="container" class="ui-layout-center ui-widget">
+      <div id="order" class="inner-layout-container">
+        <!-- begin inner-center -->
+      	<div class="inner-center"> 
+      	  <div class="pane-header ui-state-default ui-corner-all">center</div> 
+      	    <div id="grid-example" class="ui-layout-content ui-widget-content">
+      	    </div> 
+      	</div>
+        <!-- end inner-center -->
+
+      	<!-- begin inner-west -->
+      	<div class="inner-west"> 
+      	  <div class="pane-header ui-state-default ui-corner-all">Sidebar </div>
+        	  <div class="ui-layout-content ui-widget-content">
+        	    <div id="tree1"></div>
+        	  </div>
+      	</div>
+        <!-- end inner-west -->
+      </div><!-- end order -->
+    </div>  <!--end container-->
+
+    <hr>
+    <!-- begin footer -->
+    <div id="foot" class="navbar navbar-fixed-bottom">
+      <p>&copy; 2013 Cisco System Inc. All rights reserved. </p>
+    </div>
+    <!-- end footer -->
+    <!-- For bootstrap -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </body>
+</html>
