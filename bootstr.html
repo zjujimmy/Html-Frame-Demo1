@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style type="text/css">
+      thead { display:block; margin:0px; cell-spacing:0px;  width: 100%; }
+tbody { display:block; overflow:auto; height:400px; width: 100%;}
+tr{width: 100;}
+th,td { width:280px; margin:0px; cell-spacing:0px;}
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $('tr').click(function(){
+            //alert("hi");
+
+            alert($(this).find('td:eq(0)').html());
+            var str = $(this).find('td:eq(0)').html();
+            $('#myModalLabel').html(str);
+            $('#myModal').modal('show');
+          });
+        }
+        )
+    </script>
+  </head>
+  <body>
+      <table class="table table-hover table-bordered">
+        <caption>demo table</caption>
+        <thead>
+          <tr>
+            <th>AId</th>
+            <th>Name</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td>Attack</td>
+            <td>192.0.0.1</td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>Defense</td>
+            <td>192.0.0.2</td>
+          </tr>
+          <tr>
+            <td>01</td>
+            <td>Attack</td>
+            <td>192.0.0.1</td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>Defense</td>
+            <td>192.0.0.2</td>
+          </tr><tr>
+            <td>01</td>
+            <td>Attack</td>
+            <td>192.0.0.1</td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>Defense</td>
+            <td>192.0.0.2</td>
+          </tr><tr>
+            <td>01</td>
+            <td>Attack</td>
+            <td>192.0.0.1</td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>Defense</td>
+            <td>192.0.0.2</td>
+          </tr><tr>
+            <td>01</td>
+            <td>Attack</td>
+            <td>192.0.0.1</td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>Defense</td>
+            <td>192.0.0.2</td>
+          </tr><tr>
+            <td>01</td>
+            <td>Attack</td>
+            <td>192.0.0.1</td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>Defense</td>
+            <td>192.0.0.2</td>
+          </tr><tr>
+            <td>01</td>
+            <td>Attack</td>
+            <td>192.0.0.1</td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>Defense</td>
+            <td>192.0.0.2</td>
+          </tr><tr>
+            <td>01</td>
+            <td>Attack</td>
+            <td>192.0.0.1</td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>Defense</td>
+            <td>192.0.0.2</td>
+          </tr>
+        </tbody>
+      </table>
+    <!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Modal header</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Save changes</button>
+  </div>
+</div>
+  </body>
+</html> 
