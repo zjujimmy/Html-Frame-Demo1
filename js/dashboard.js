@@ -90,11 +90,24 @@ $(document).ready(function () {
     		
     		if (node.name == "Instances") {
     			strNodeName += "d3";
-    		} else{
+    		} else if ( node.name == "Reserved Instances"){
     			strNodeName += "Volumes";
-    		}
+    		} else {
+                strNodeName += "events";
+            }
     		strNodeName += ".html?t=" + Math.random();
-    		$('#grid-example').load(strNodeName);
+    		$('#grid-example').load(strNodeName, function(){
+                    $('#mytable').dataTable({
+                        "sScrollY": "100px",
+                        "bPaginate": false,
+                        "bScrollCollapse": true,
+                        "bScrollAutoCss": true
+                    });
+
+            });
+
+              
+     
     		
     	}
     );

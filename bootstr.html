@@ -8,10 +8,23 @@
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <style type="text/css">
-      thead { display:block; margin:0px; cell-spacing:0px;  width: 100%; }
-tbody { display:block; overflow:auto; height:400px; width: 100%;}
-tr{width: 100;}
-th,td { width:280px; margin:0px; cell-spacing:0px;}
+   /* body {  width: 2000px;}
+    thead { display:block; margin:0px; cell-spacing:0px;  width: 100%; background-color: red;}
+    
+tbody { display:block; overflow:auto; height:400px; width: 100%; background-color: blue;}
+tbody>tr{width: 100%; background-color: green; display: block;}
+th,td {  margin:0px; cell-spacing:0px; }*/
+    table {
+      display: block;
+position: absolute;
+    }
+
+    tbody {
+
+      overflow: auto;
+      min-height: 80px;
+    }
+
     </style>
 
     <script type="text/javascript">
@@ -29,7 +42,7 @@ th,td { width:280px; margin:0px; cell-spacing:0px;}
     </script>
   </head>
   <body>
-      <table class="table table-hover table-bordered">
+      <table class="table table-hover table-bordered ">
         <caption>demo table</caption>
         <thead>
           <tr>
