@@ -1,0 +1,28 @@
+{
+	"events":[ 
+		{
+		"type":"ABCD",
+		"protocol":1,
+		"description":"WAWAWA",
+		"eventId":121231,
+		"sourceList":[],
+		"targetList":[],
+		"bytesUp":56789,
+		"bytesDown":0,
+		"packets":987,
+		"flows":4321
+		},
+		{
+		"type":"EFGH",
+		"protocol":2,
+		"description":"HAHAHA",
+		"eventId":121232,
+		"sourceList":[],
+		"targetList":[],
+		"bytesUp":45321,
+		"bytesDown":45332,
+		"packets":989,
+		"flows":4324
+		}
+]
+}

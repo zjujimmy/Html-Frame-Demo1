@@ -10,4 +10,4 @@ js/d3forpage.js -- the sample code to create d3 chart. Renamed it to d3chart.js
 
 v0.1   Sep.6   merge within Fred's code.Rename the project to Dashboard.Create new index.html, put all js code into dashboard.js, all css code into dashboard.css.Add comments and adjust formats. 
 
-
+v0.2   Sep.13  Integate with Json file. Use dataTables in simple-events.html.Click one row in the table, it will pop up a new window: sample-detail.html.

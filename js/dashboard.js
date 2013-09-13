@@ -97,12 +97,68 @@ $(document).ready(function () {
             }
     		strNodeName += ".html?t=" + Math.random();
     		$('#grid-example').load(strNodeName, function(){
+
+                    $.ajax({
+                        type: "GET",
+                        url: "../ListIncidentOverviewResp.json",
+                        dataType:"json",
+                        success: function(data){
+                            $.each(data, function(i,n){
+                                var rec = "<tr>";
+                                rec += "<td id='entityId' >";
+                                var eArray = n.entity.split(" ");
+                                $.each(eArray, function(i, value){
+                                    if(i == 0){
+                                        rec += "<a href='content/sample-detail.html' target='_blank'>";
+                                        rec += eArray[i];
+                                        rec += "</a><br/>";
+                                    } else {
+                                        rec += eArray[i] + "<br/>";
+                                    }
+                                    
+                                });
+                                rec += "</td>";
+                                rec += "<td>"
+                                $.each(n.incidentList, function(i, item){
+                                    rec += item.incidentClass + "<br/>";
+                                });
+                                rec += "</td>";
+
+                                rec += "<td>";
+                                rec += "<table><tr><td>UP</td>";
+                                $.each(n.up, function(i, item){
+                                    rec += "<td>";
+                                    rec += item.value;
+                                    rec += "</td>";
+                                });
+                                rec += "</tr><tr><td>DOWN</td>";
+                                $.each(n.down, function(i, item){
+                                    rec += "<td>";
+                                    rec += item.value;
+                                    rec += "</td>";
+                                });
+                                rec += "</tr></table>";
+                                rec += "</td>";
+
+                                rec += "<td> </td>";
+                                rec += "<td> </td>";
+                                rec += "</tr>";
+                                $('#mytable').append(rec);
+                            });
+
+                        }
+                    });
+
+ 
                     $('#mytable').dataTable({
-                        "sScrollY": "100px",
+                        "sScrollY": "400px",
                         "bPaginate": false,
                         "bScrollCollapse": true,
-                        "bScrollAutoCss": true
+                        "bInfo": false,
+                        "bJQueryUI": true
                     });
+
+
 
             });
 
