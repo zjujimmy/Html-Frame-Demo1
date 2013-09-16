@@ -23,6 +23,7 @@
 		height:		100%;					
 		padding:	0;
 		margin:		0;
+		font-size: normal;
 		/*overflow:	auto; *//* when page gets too small for container min-width/height */
 	}
 
@@ -96,11 +97,11 @@
 
 	/* add some colors to distinguish outer from inner panes */
 	.ui-layout-center {
-		background:	#FFE;
+		background:	 #FFE;
 	}
 
 	#order .ui-layout-pane	{
-		background:	#EFE;
+		background:	#FFFFFF;/*#EFE; change to white */ 
 	}
 
 
